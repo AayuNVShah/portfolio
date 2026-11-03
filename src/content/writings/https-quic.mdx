@@ -1,0 +1,7 @@
+HTTP on port 80 is readable in transit. HTTPS wraps HTTP in TLS: encryption, server certificates, a fight against tampering and impersonation.
+
+TLS 1.3 over TCP still pays for a TCP handshake plus a key exchange, and still inherits TCP head-of-line blocking. QUIC folds transport and TLS over UDP, aiming for 1-RTT (or 0-RTT on resume) and independent streams.
+
+Trust versus latency is the actual product decision. A backend engineer who only sees application JSON is missing half the journey.
+
+Original notes from a public LinkedIn essay.

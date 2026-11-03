@@ -1,0 +1,5 @@
+Enter is not a miracle. It is a pipeline: DNS from cache to resolver to root to TLD to authority; a transport that is either TCP+TLS or QUIC; then an HTTP request that has already been packetized, encrypted, and routed.
+
+The black box of “the page appeared” is where latency hides. Mapping that path changed how I think about backend work — every integration timeout is a story about some layer in this stack.
+
+Original notes from a public LinkedIn essay.

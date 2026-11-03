@@ -1,0 +1,11 @@
+Caching is not only *what* you store. It is *how* bytes travel between a cache and a database when a read misses, a write lands, or a row goes stale.
+
+**Cache-aside** lets the application check the cache, load from the database on a miss, and usually invalidate on write. Simple, and the miss path is visible — which also means the miss path is latency.
+
+**Read-through** hides the load behind the cache itself. Application code gets quieter; cache infrastructure gets more serious.
+
+**Write-through** updates cache and database together before success. Consistency improves. Write latency pays for it.
+
+The useful question is not which pattern is fashionable. It is which movement of data your workload can afford: read-heavy dashboards, write-heavy ledgers, or a mix that needs explicit invalidation.
+
+Original notes from a public LinkedIn essay. The source post remains the canonical long form.

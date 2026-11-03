@@ -1,0 +1,35 @@
+:root {
+  --ivory: #f4efe5;
+  --ivory-deep: #e8dfd0;
+  --gold: #c3a66b;
+  --gold-bright: #e0c98a;
+  --terracotta: #a65d3f;
+  --maroon: #632e36;
+  --forest: #273b36;
+  --charcoal: #171715;
+  --charcoal-soft: #221f1c;
+  --ink: #1c1916;
+  --mist: rgba(244, 239, 229, 0.08);
+
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-body: var(--font-manrope), system-ui, sans-serif;
+
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+  --header-h: 4.5rem;
+  --rail-w: 5.5rem;
+}
+
+@theme inline {
+  --color-ivory: var(--ivory);
+  --color-ivory-deep: var(--ivory-deep);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-terracotta: var(--terracotta);
+  --color-maroon: var(--maroon);
+  --color-forest: var(--forest);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-soft: var(--charcoal-soft);
+  --color-ink: var(--ink);
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-manrope);
+}

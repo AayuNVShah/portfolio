@@ -1,0 +1,7 @@
+There is no central traffic controller. Routers exchange rumours — more politely, routing protocols — about reachable networks and choose a next hop.
+
+Distance vector asks: which neighbour is fewest hops away? Simple, distributed, and bounded in scale (RIP as the textbook). Link state asks: what is the cheapest path on a map we all share?
+
+Backend work inherits this humility. Your service mesh, your message bus, your integration retry — they are all opinions about the next hop when the world is only partially known.
+
+Original notes from a public LinkedIn essay.

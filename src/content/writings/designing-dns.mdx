@@ -1,0 +1,9 @@
+DNS looks like a dictionary: a name in, an address out. At internet scale it is a distributed system that must stay fast when anything else is on fire.
+
+Functional shape: resolve names, reverse lookups, a zoo of record types, hierarchical query routing from root through TLD to authoritative servers, and TTL-shaped caches so the planet does not ask the same question twice.
+
+Non-functional shape: milliseconds, extreme availability, and replicas because DNS is load-bearing for almost every other service.
+
+Designing DNS is a reminder that the simplest API can hide the hardest operations problem.
+
+Original notes from a public LinkedIn essay.
