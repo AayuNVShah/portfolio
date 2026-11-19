@@ -12,6 +12,7 @@ export function useAudioPlayer(src: string) {
   useEffect(() => {
     const audio = new Audio(src);
     audio.preload = "metadata";
+    audio.volume = 1.0;
     audioRef.current = audio;
 
     const onTime = () => {
@@ -20,16 +21,22 @@ export function useAudioPlayer(src: string) {
     };
     const onMeta = () => setDuration(Number.isFinite(audio.duration) ? audio.duration : 0);
     const onEnd = () => setPlaying(false);
+    const onPlayIntro = () => {
+      audio.currentTime = 0;
+      void audio.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+    };
 
     audio.addEventListener("timeupdate", onTime);
     audio.addEventListener("loadedmetadata", onMeta);
     audio.addEventListener("ended", onEnd);
+    window.addEventListener("odyssey:play-intro", onPlayIntro);
 
     return () => {
       audio.pause();
       audio.removeEventListener("timeupdate", onTime);
       audio.removeEventListener("loadedmetadata", onMeta);
       audio.removeEventListener("ended", onEnd);
+      window.removeEventListener("odyssey:play-intro", onPlayIntro);
     };
   }, [src]);
 

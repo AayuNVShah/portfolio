@@ -39,10 +39,8 @@ export function TanpuraWave() {
         ctx.stroke();
         void base;
       });
-      if (!reduced) {
-        t += 0.035;
-        raf = requestAnimationFrame(draw);
-      }
+      t += 0.035;
+      raf = requestAnimationFrame(draw);
     };
     draw();
     return () => cancelAnimationFrame(raf);

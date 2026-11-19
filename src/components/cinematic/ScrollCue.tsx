@@ -1,13 +1,20 @@
+"use client";
+
+import { scrollToChapter } from "@/lib/navigation/scroll";
+
 export function ScrollCue() {
   return (
-    <a
-      href="#person"
-      className="group inline-flex flex-col items-center gap-2 text-ivory/70 transition-colors hover:text-gold-bright"
+    <button
+      type="button"
+      onClick={() => scrollToChapter("person")}
+      className="group inline-flex items-center gap-4 text-ivory/75 transition-colors hover:text-gold-bright"
     >
-      <span className="font-sans text-[0.6rem] tracking-[0.35em] uppercase">Scroll to discover</span>
-      <span className="relative h-12 w-px overflow-hidden bg-ivory/20">
-        <span className="absolute inset-x-0 top-0 h-4 bg-gold motion-safe:animate-[scrollcue_1.8s_ease-in-out_infinite]" />
+      <span className="font-sans text-[0.6rem] tracking-[0.35em] uppercase">
+        Scroll to glide through the stepwell
       </span>
-    </a>
+      <span className="relative h-px w-16 overflow-hidden bg-ivory/25">
+        <span className="absolute inset-y-0 left-0 w-6 bg-gold motion-safe:animate-[scrollcue-x_1.8s_ease-in-out_infinite]" />
+      </span>
+    </button>
   );
 }

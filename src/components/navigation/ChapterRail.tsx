@@ -14,7 +14,7 @@ export function ChapterRail() {
       aria-label="Chapter rail"
       className="pointer-events-none fixed top-1/2 left-3 z-40 hidden -translate-y-1/2 xl:block"
     >
-      <ol className="pointer-events-auto flex flex-col gap-3 border-l border-gold/30 pl-3">
+      <ol className="pointer-events-auto flex flex-col gap-3 rounded-lg border border-gold/30 bg-charcoal/80 px-3 py-3 backdrop-blur-md">
         {chapters.map((chapter) => (
           <li key={chapter.id}>
             <button

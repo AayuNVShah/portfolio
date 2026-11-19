@@ -4,13 +4,19 @@ import { useMemo, useState } from "react";
 import { writingCategories, writings } from "@/data/writings";
 import { WritingCard } from "@/components/journal/WritingCard";
 
-export function CategoryFilter() {
+export function CategoryFilter({
+  layout = "vertical",
+}: {
+  /** "horizontal" lays cards out in two rows that grow sideways (home page panel). */
+  layout?: "vertical" | "horizontal";
+}) {
   const [active, setActive] = useState<string>("All");
   const items = useMemo(
     () =>
       active === "All" ? writings : writings.filter((w) => w.category === active),
     [active],
   );
+  const horizontal = layout === "horizontal";
 
   return (
     <div>
@@ -32,13 +38,21 @@ export function CategoryFilter() {
           </button>
         ))}
       </div>
-      <div className="mt-4">
+      <div
+        className={
+          horizontal
+            ? "mt-2 grid auto-cols-[min(20rem,75vw)] grid-flow-col grid-rows-2 gap-x-8"
+            : "mt-4"
+        }
+      >
         {items.length === 0 ? (
           <p className="py-10 font-display text-xl italic text-forest/60">
             Nothing filed in this drawer yet — the manuscript grows as new notes arrive.
           </p>
         ) : (
-          items.map((writing) => <WritingCard key={writing.slug} writing={writing} />)
+          items.map((writing) => (
+            <WritingCard key={writing.slug} writing={writing} compact={horizontal} />
+          ))
         )}
       </div>
     </div>

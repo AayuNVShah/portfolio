@@ -26,7 +26,7 @@ export function ChapterHeading({
         {kicker}
       </p>
       <h2
-        className={`mt-2 font-display text-4xl leading-[1.1] sm:text-5xl lg:text-6xl ${
+        className={`mt-2 font-display text-4xl leading-[1.1] lg:text-5xl ${
           light ? "text-ivory" : "text-charcoal"
         }`}
       >

@@ -5,7 +5,7 @@ export const interests = [
   },
   {
     title: "Ragas and taals",
-    body: "A taal is a contract. A raga is a grammar. Together they feel like distributed systems with better ornament.",
+    body: "A taal is a contract. A raga is a grammar. Enable Raga, then scroll: Teentaal, Dadra, Rupak, Jhaptaal and Ektaal carry the theka. Drag the swar mandala for Sa–Ni meend.",
   },
   {
     title: "Indian architecture",
