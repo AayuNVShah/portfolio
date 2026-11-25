@@ -3,7 +3,6 @@
 import { chapters } from "@/data/navigation";
 import { scrollToChapter } from "@/lib/navigation/scroll";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 
 export function ChapterRail() {
   const pathname = usePathname();

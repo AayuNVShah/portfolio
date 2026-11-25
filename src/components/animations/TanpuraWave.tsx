@@ -40,7 +40,7 @@ export function TanpuraWave() {
         void base;
       });
       t += 0.035;
-      raf = requestAnimationFrame(draw);
+      if (!reduced) raf = requestAnimationFrame(draw);
     };
     draw();
     return () => cancelAnimationFrame(raf);

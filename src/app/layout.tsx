@@ -21,6 +21,7 @@ const sans = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aayunvshah.github.io"),
   title: {
     default: `${profile.name} — ${profile.creativeDirection}`,
     template: `%s — ${profile.name}`,

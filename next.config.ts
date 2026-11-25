@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    agentUpgrade: "security",
+  },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   turbopack: {
     rules: {

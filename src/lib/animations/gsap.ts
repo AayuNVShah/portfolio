@@ -30,7 +30,10 @@ export function cinematicContext(scope: HTMLElement) {
   registerGsap();
   const ctx = gsap.context(() => {
     // Keep all [data-reveal] elements 100% visible so no chapter content is ever hidden
-    gsap.set("[data-reveal]", { opacity: 1, x: 0, y: 0, clipPath: "none" });
+    const revealElements = scope.querySelectorAll<HTMLElement>("[data-reveal]");
+    if (revealElements.length > 0) {
+      gsap.set(revealElements, { opacity: 1, x: 0, y: 0, clipPath: "none" });
+    }
 
     const plans = scope.querySelectorAll<SVGGeometryElement>(
       "[data-stepwell-drawing] path, [data-stepwell-drawing] rect, [data-stepwell-drawing] line, [data-stepwell-drawing] circle",

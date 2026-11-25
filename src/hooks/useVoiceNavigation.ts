@@ -44,7 +44,7 @@ export function useVoiceNavigation() {
   const recRef = useState<{ current: SpeechRec | null }>({ current: null })[0];
 
   useEffect(() => {
-    setSupported(Boolean(getRecognition()));
+    queueMicrotask(() => setSupported(Boolean(getRecognition())));
   }, []);
 
   const stop = useCallback(() => {
